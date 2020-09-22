@@ -8,10 +8,9 @@ class Scrabble
   def splitword(word)
     return word_array = @word.split("")
   end
-end  
+  
 
-def scoretheword(splitword)
-  def getscore(letter)
+  def scoretheword(splitword)
     lettervalues = Hash.new()
     lettervalues.store("a", 1)
     lettervalues.store("b", 3)
@@ -39,21 +38,12 @@ def scoretheword(splitword)
     lettervalues.store("x", 8)
     lettervalues.store("y", 4)
     lettervalues.store("z", 10)
-    return  lettervalues.fetch("#{letter}")
-  end
-  splitword.each do |array_element|
-   numericalarray = splitword.map  {|element| getscore(element)}
-  return total_score = numericalarray.reduce(:+)
+
+    total_score = 0
+    splitword.each do |letter|
+      word_score = lettervalues.fetch(letter)
+      total_score += word_score
+    end
+    return total_score
   end
 end
-
-
-#   def points(letter)
-#     letterpoints = Hash.new()
-#     @points wordpoints.store("A",1)
-#     score = wordpoints.fetch("A")
-#     return score
-#   end
-
-#total_score = 0
-#    word_array = @word.split("")

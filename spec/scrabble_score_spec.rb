@@ -14,9 +14,9 @@ describe ('initialize') do
   end
 end 
 
-describe ('getscore') do 
+describe ('scoretheword') do 
  it('loops through letters and gives numerical value of each') do 
-  expect(scoretheword(ourscrabble.splitword('exit'))).to(eq(11))
+  expect(ourscrabble.scoretheword(ourscrabble.splitword('exit'))).to(eq(11))
    end 
 end 
 

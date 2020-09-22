@@ -5,7 +5,18 @@ class Scrabble
 
   def scrabble_score(word)
   score = Hash.new()
-  score.store("a", 1)
+  s
+  
+  total_score = 0
+  word_array = @word.split("")
+  word_array.each do |letter|
+    letter_value = score.fetch(letter)
+    total_score += letter_value
+  end  
+  total_score
+end 
+
+  core.store("a", 1)
   score.store("b", 3)
   score.store("c", 3)
   score.store("d", 2)
@@ -31,15 +42,14 @@ class Scrabble
   score.store("x", 8)
   score.store("y", 4)
   score.store("z", 10)
-  
-  total_score = 0
-  word_array = @word.split("")
-  word_array.each do |letter|
-    letter_value = score.fetch(letter)
-    total_score += letter_value
-  end  
-  total_score
-end 
 
-  
 
+#   def points(letter)
+#     letterpoints = Hash.new()
+#     @points wordpoints.store("A",1)
+#     score = wordpoints.fetch("A")
+#     return score
+#   end
+
+#total_score = 0
+#    word_array = @word.split("")
